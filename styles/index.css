@@ -23,6 +23,7 @@ body {
 	background-color: var(--light-grayish-blue);
 	max-width: 1440px;
 	margin: 0 auto;
+	position: relative;
 }
 
 .testimonials {
@@ -37,6 +38,13 @@ body {
 	padding: 2rem;
 	border-radius: 10px;
 	color: var(--white);
+	box-shadow: 10px 14px 30px -20px rgba(0, 0, 0, 0.78);
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+	/* transform: scale(1.01); */
+	box-shadow: none;
 }
 
 .card__reviewer-pic {
@@ -96,9 +104,24 @@ body {
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 767px) {
-	body {
+	.testimonials {
+		padding: 1rem;
+		grid-template-columns: 1fr 1fr;
+	}
+	/* .card--wide {
+		grid-column: auto;
+	}
+
+	.card--long {
+		grid-row: auto;
+	} */
+}
+
+@media only screen and (max-width: 650px) {
+	.testimonials {
 		grid-template-columns: 1fr;
 	}
+
 	.card--wide {
 		grid-column: auto;
 	}
